@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  registry: 'ghcr.io'
+  REGISTRY: 'ghcr.io'
 
 jobs:
   build:
