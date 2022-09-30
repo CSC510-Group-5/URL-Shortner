@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { InputLongUrlComponent } from './input-long-url/input-long-url.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatButtonModule} from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,9 +21,13 @@ import {MatInputModule} from '@angular/material/input';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatInputModule
+    MatInputModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatButtonModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [MatDatepickerModule,MatNativeDateModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

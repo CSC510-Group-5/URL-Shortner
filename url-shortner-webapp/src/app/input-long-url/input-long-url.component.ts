@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-input-long-url',
@@ -6,8 +7,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./input-long-url.component.scss']
 })
 export class InputLongUrlComponent implements OnInit {
+  
+  // variables for form and Regex
+  urlShortnerForm : FormGroup;
+  urlRegex = new RegExp('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?');
 
-  constructor() { }
+  
+  constructor(private fb: FormBuilder) {
+    // initialize the form and setup validators for form fields
+    this.urlShortnerForm = this.fb.group({
+    long_url: ['', [Validators.required, Validators.pattern(this.urlRegex) ]],
+    expiration_date: ['',Validators.required]
+ });}
+
+ // submit function to call actual API and get short URL
+  getShortURL(){
+    // only call API if form is valid
+    if(this.urlShortnerForm.valid)
+    {
+      this.urlShortnerForm.markAllAsTouched();
+      // TO-DO : add code to call backend API and get shortened URL
+      console.log(this.urlShortnerForm.value);
+    }
+  }
 
   ngOnInit(): void {
   }
