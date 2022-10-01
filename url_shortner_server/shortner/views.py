@@ -1,3 +1,6 @@
-from django.shortcuts import render
+"""Views module stores all the views of the application"""
 
-# Create your views here.
+from shortner.new_view import NewView
+from shortner.stub_view import StubView
+
+__all__ = ["NewView", "StubView"]
