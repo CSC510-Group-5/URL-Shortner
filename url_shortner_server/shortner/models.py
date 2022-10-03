@@ -1,5 +1,6 @@
 """Models module deals with models representing entities in the application"""
 
+import json
 from random import seed, choice
 from uuid import uuid4
 
@@ -18,3 +19,11 @@ class Link(models.Model):
         seed(str(self.special_code))
         self.stub = ''.join(choice(CHARS) for _ in range(STUB_LENGTH))
         super().save(*args, **kwargs)
+
+    def to_json(self):
+        """to_json converts link to JSON string"""
+        return json.dumps({
+            "long_url": self.long_url,
+            "special_code": str(self.special_code),
+            "stub": self.stub
+        })
