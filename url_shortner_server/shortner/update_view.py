@@ -3,10 +3,7 @@
 from django.http.request import HttpRequest
 from django.http.response import HttpResponse
 from django.views.generic import View
-
 from shortner.models import Link
-
-
 class UpdateView(View):
     """UpdateView is responsible for updating the long url of existing links"""
 
