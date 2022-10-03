@@ -15,4 +15,5 @@ class NewView(View):
         long_url = request.POST["long_url"]
         link = Link(long_url)
         link.save()
-        return HttpResponse(status=201)
+        response = link.to_json()
+        return HttpResponse(response, status=201)
