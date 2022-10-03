@@ -3,6 +3,7 @@
 from django.http.request import HttpRequest
 from django.http.response import HttpResponse
 from django.views.generic import View
+import json
 
 from shortner.models import Link
 
@@ -12,7 +13,8 @@ class NewView(View):
 
     def post(self, request: HttpRequest):
         """post handles post requests to /new"""
-        long_url = request.POST["long_url"]
+        httpBody = json.loads(request.body)
+        long_url = httpBody["long_url"]
         link = Link(long_url)
         link.save()
         response = link.to_json()

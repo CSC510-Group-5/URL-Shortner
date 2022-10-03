@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from shortner.views import NewView, StubView, UpdateView
+
+from shortner.views import NewView, StubView, UpdateView, DeleteView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("new/", NewView.as_view()),
+    path("delete/", DeleteView.as_view()),
     path("stub/<slug:stub>/", StubView.as_view()),
     path("update/", UpdateView.as_view()),
 ]
