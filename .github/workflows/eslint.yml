@@ -44,4 +44,4 @@ jobs:
         run: npx eslint .
           --config url-shortner-webapp/.eslintrc.json
           --ext .js,.ts
-        continue-on-error: true
+        continue-on-error: false
