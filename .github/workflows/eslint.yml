@@ -35,6 +35,7 @@ jobs:
           npm install eslint@8.10.0
           npm install @microsoft/eslint-formatter-sarif@2.1.7
           npm install -g @angular/cli
+          npm install @angular-eslint/eslint-plugin@latest --save-dev
 
       - name: Run ESLint
         run: npx eslint .
