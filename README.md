@@ -6,3 +6,7 @@
 
 [![GitHub contributors](https://img.shields.io/github/contributors/CSC510-Group-5/URL-Shortner)](https://github.com/CSC510-Group-5/URL-Shortner/graphs/contributors)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/CSC510-Group-5/URL-Shortner)](https://github.com/CSC510-Group-5/URL-Shortner/graphs/commit-activity)
+
+[![DOI](https://zenodo.org/badge/537949437.svg)](https://zenodo.org/badge/latestdoi/537949437)
+
+[![GitHub license](https://img.shields.io/github/license/CSC510-Group-5/URL-Shortner)](https://github.com/CSC510-Group-5/URL-Shortner/blob/main/LICENSE)
