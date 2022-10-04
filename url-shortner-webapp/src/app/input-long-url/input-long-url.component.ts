@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-input-long-url',
   templateUrl: './input-long-url.component.html',
   styleUrls: ['./input-long-url.component.scss']
 })
-export class InputLongUrlComponent implements OnInit {
+export class InputLongUrlComponent {
   
   // variables for form and Regex
   urlShortnerForm : FormGroup;
@@ -31,7 +31,5 @@ export class InputLongUrlComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-  }
 
 }
