@@ -1,7 +1,11 @@
 {
   "root": true,
   "ignorePatterns": [
-    "projects/**/*"
+    "projects/**/*",
+    "**/*.json",
+    "dist/**",
+    "src/*.ts",
+    "src/environments/**"
   ],
   "overrides": [
     {
