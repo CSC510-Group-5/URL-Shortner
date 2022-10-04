@@ -22,4 +22,4 @@ class UpdateView(View):
             link.save()
             return HttpResponse(link.long_url, status=201)
         except Link.DoesNotExist: #pylint: disable=no-member
-            return HttpResponse(status=404)
+            return HttpResponse("Incorrect stub/special code", status=404)
