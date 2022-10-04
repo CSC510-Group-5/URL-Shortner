@@ -33,7 +33,12 @@ jobs:
       - name: Install ESLint
         run: |
           npm install eslint@8.10.0
-          npm install
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+
+      - name: Install dependencies
+        run: npm install
 
       - name: Run ESLint
         run: npx eslint .
