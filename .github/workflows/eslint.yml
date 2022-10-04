@@ -33,8 +33,8 @@ jobs:
       - name: Install ESLint
         run: |
           npm install eslint@8.10.0
-          npm install -g @angular/cli
-          npm install -g @angular-eslint/eslint-plugin@latest
+          npm install @angular/cli
+          npm install @angular-eslint/eslint-plugin@latest
 
       - name: Run ESLint
         run: npx eslint .
