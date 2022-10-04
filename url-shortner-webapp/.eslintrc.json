@@ -2,7 +2,7 @@
   "root": true,
   "ignorePatterns": [
     "projects/**/*",
-    "**/*.json",
+    "**.json",
     "dist/**",
     "src/*.ts",
     "src/environments/**"
@@ -16,6 +16,8 @@
         "project": [
           "tsconfig.json"
         ],
+        "tsconfigRootDir": "url-shortner-webapp",
+    "sourceType": "module",
         "createDefaultProgram": true
       },
       "extends": [
