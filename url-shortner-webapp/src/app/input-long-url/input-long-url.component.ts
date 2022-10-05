@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { environment } from 'src/environments/environment';
 import { ApiService } from '../api.service';
@@ -16,7 +16,7 @@ export interface DialogData {
   templateUrl: './input-long-url.component.html',
   styleUrls: ['./input-long-url.component.scss']
 })
-export class InputLongUrlComponent implements OnInit {
+export class InputLongUrlComponent {
   
   // variables for form and Regex
   urlShortnerForm : FormGroup;
@@ -71,8 +71,6 @@ export class InputLongUrlComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-  }
 
 }
 
