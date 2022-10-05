@@ -1,7 +1,12 @@
 <div class="wrapper">
 <h3>Welcome to your URL shortner!</h3>
+<div class="overlay" *ngIf="loading === true">
+  <div class="center">
+<mat-spinner diameter=50 ></mat-spinner>
+</div>
+</div>
 <form [formGroup]="urlShortnerForm" (ngSubmit)="getShortURL()" novalidate>
-<mat-form-field class="full-width" appearance="fill">
+  <mat-form-field class="full-width" appearance="fill">
     <mat-label>Enter long URL</mat-label>
     <input type="text" matInput placeholder="Ex. https://www.google.com/" formControlName="long_url">
     <mat-error *ngIf="urlShortnerForm?.get('long_url')?.errors?.['required']">
@@ -11,7 +16,7 @@
       Please enter a valid URL.
     </mat-error>
   </mat-form-field>
-  <mat-form-field appearance="fill" class="full-width">
+  <!-- <mat-form-field appearance="fill" class="full-width">
     <mat-label>Choose an expiration date</mat-label>
     <input matInput [matDatepicker]="picker" formControlName="expiration_date">
     <mat-hint>MM/DD/YYYY</mat-hint>
@@ -20,7 +25,7 @@
     <mat-error *ngIf="urlShortnerForm?.get('expiration_date')?.errors?.['required']">
       Expiration Date is required.
     </mat-error>
-  </mat-form-field>
+  </mat-form-field> -->
 <button mat-raised-button color="primary" type="submit">Get short URL</button>
 </form>
 </div>
