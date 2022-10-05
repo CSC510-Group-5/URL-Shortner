@@ -10,7 +10,7 @@ import { URL } from './models/URL';
 })
 export class ApiService {
 
-  private baseUrl = environment.apiBaseUrl + "/url";
+  private baseUrl = environment.apiBaseUrl + "/new/";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -22,9 +22,8 @@ export class ApiService {
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
 
   public addURL(url: URL): Observable<URL> {
-    console.log(url);
-    return this.http.post<any>(`${this.baseUrl}`, url).pipe(map((json: string) => {
-      return new URL(json);
+    return this.http.post<URL>(`${this.baseUrl}`, JSON.stringify(url), this.httpOptions).pipe(map((json: URL) => {
+      return json;
     })
     );
   }

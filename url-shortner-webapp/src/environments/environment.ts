@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: ''
+  apiBaseUrl: 'http://sef22group5.pythonanywhere.com'
 };
 
 /*

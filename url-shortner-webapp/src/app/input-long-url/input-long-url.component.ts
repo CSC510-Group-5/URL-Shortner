@@ -1,8 +1,10 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { environment } from 'src/environments/environment';
 import { ApiService } from '../api.service';
 import { URL } from '../models/URL'
+
 
 export interface DialogData {
   title: string;
@@ -34,18 +36,19 @@ export class InputLongUrlComponent implements OnInit {
     {
       this.urlShortnerForm.markAllAsTouched();
       this.loading = true;
-      const newURL = new URL({
-        "long_url": this.urlShortnerForm.get('long_url')
+      let newURL = new URL({
+        "long_url": this.urlShortnerForm.get('long_url')?.value
       });
 
       this._apiService.addURL(newURL).subscribe(
         (data) => {
           console.log(data);
           this.loading = false;
+
           const dialogRef = this.dialog.open(DialogShortUrl, {
             data: {
               title: 'Short URL Generated',
-              content: 'Short URL is: ' + data.stub
+              content: '<b>Short URL is: </b>' + environment.apiBaseUrl + "/stub/" + data.stub + "<br> <b>Access code is: </b>" + data.special_code + "<br> Save this before closing the dialog. You can utilize the access code to update or delete your urls."
             },
           });
 
