@@ -19,7 +19,9 @@ jobs:
         with:
           python-version: "3.x"
       - name: Install pdoc3
-        run: pip3 install pdoc3
+        run: |
+          pip3 install pdoc3
+          pip install -r url_shortner_server/requirements.txt
       - name: Generate Documentation
         run: pdoc --html url_shortner_server/shortner
       - name: Build And Deploy API Documentation
