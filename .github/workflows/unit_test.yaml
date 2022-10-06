@@ -23,9 +23,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install -r requirements.txt
+          python -m pip install -r url_shortner_server/requirements.txt
       - name: Run unit test
-        run: python manage.py test shortner
+        run: python url_shortner_server/manage.py test shortner
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
   Code-Coverage:
@@ -45,7 +45,7 @@ jobs:
         run: |
           python -m pip install coverage
       - name: Run code coverage
-        run: coverage manage.py test shortner
+        run: coverage url_shortner_server/manage.py test shortner
 
       - name: Upload Coverage to Codecov
         uses: codecov/codecov-action@v2
