@@ -1,0 +1,53 @@
+name: Test & Coverage
+on:
+  push:
+    branches:
+      - "main"
+  pull_request:
+    branches:
+      - "main"
+  workflow_dispatch:
+jobs:
+  Unit-Tests:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "The job was triggered on branch ${{ github.ref }}."
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install -r requirements.txt
+      - name: Run unit test
+        run: python manage.py test shortner
+
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+  Code-Coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "The job was triggered on branch ${{ github.ref }}."
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install coverage
+      - name: Run code coverage
+        run: coverage run cli.py -e all
+
+      - name: Upload Coverage to Codecov
+        uses: codecov/codecov-action@v2
+
+      - run: echo "🍏 This job's status is ${{ job.status }}."
