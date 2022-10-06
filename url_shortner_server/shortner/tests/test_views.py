@@ -8,14 +8,13 @@ import json
 
 class TestViews(TestCase):
     
-    def setup(self):
+    def setUp(self):
         self.client = Client()
         self.add_new_url = reverse('add_new')
         self.update_url = reverse('update')
         self.delete_url = reverse('delete')
 
     def test_all_view(self):
-        self.setup()
         http_response = self.client.post(self.add_new_url, {
             'long_url': 'https://www.google.com/'
         }, content_type="application/json")
