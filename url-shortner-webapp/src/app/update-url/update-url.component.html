@@ -1,0 +1,38 @@
+<div class="wrapper">
+    <h3>Update URL</h3>
+    <div class="overlay" *ngIf="loading === true">
+      <div class="center">
+    <mat-spinner diameter=50 ></mat-spinner>
+    </div>
+    </div>
+    <form [formGroup]="urlShortnerForm" (ngSubmit)="updateShortURL()" novalidate>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Enter Short URL Stub</mat-label>
+        <input type="text" matInput placeholder="Ex. If your URL is http://sef22group5.pythonanywhere.com/stub/cY5x1FH8mI, then stub is cY5x1FH8mI" formControlName="stub">
+        <mat-error *ngIf="urlShortnerForm?.get('stub')?.errors?.['required']">
+          Stub is required.
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Enter Access Code</mat-label>
+        <input type="text" matInput placeholder="Access code generated when generating long url" formControlName="special_code">
+        <mat-error *ngIf="urlShortnerForm?.get('special_code')?.errors?.['required']">
+          Access code is required.
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Enter Updated Long URL</mat-label>
+        <input type="text" matInput placeholder="Ex. https://www.google.com/" formControlName="new_long_url">
+        <mat-error *ngIf="urlShortnerForm?.get('new_long_url')?.errors?.['required']">
+          URL is required.
+        </mat-error>
+        <mat-error *ngIf="urlShortnerForm?.get('new_long_url')?.errors?.['pattern']">
+          Please enter a valid URL.
+        </mat-error>
+      </mat-form-field>
+      <br>
+    <button mat-raised-button color="primary" type="submit">Update URL</button>
+    </form>
+    </div>
