@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { ApiService } from '../api.service';
 import { URL } from '../models/URL'
@@ -23,11 +24,15 @@ export class InputLongUrlComponent {
   urlRegex = new RegExp('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?');
   loading: boolean = false;
   
-  constructor(private fb: FormBuilder, private _apiService: ApiService, public dialog: MatDialog) {
+  constructor(private fb: FormBuilder, private _apiService: ApiService, public dialog: MatDialog, private router: Router) {
     // initialize the form and setup validators for form fields
     this.urlShortnerForm = this.fb.group({
     long_url: ['', [Validators.required, Validators.pattern(this.urlRegex) ]]
  });}
+
+  goToPage(page: string){
+    this.router.navigate([`${page}`]);
+  }
 
  // submit function to call actual API and get short URL
   getShortURL(){
@@ -45,7 +50,7 @@ export class InputLongUrlComponent {
           console.log(data);
           this.loading = false;
 
-          const dialogRef = this.dialog.open(DialogShortUrl, {
+          const dialogRef = this.dialog.open(DialogShortUrlComponent, {
             data: {
               title: 'Short URL Generated',
               content: '<b>Short URL is: </b>' + environment.apiBaseUrl + "/stub/" + data.stub + "<br> <b>Access code is: </b>" + data.special_code + "<br> Save this before closing the dialog. You can utilize the access code to update or delete your urls."
@@ -59,7 +64,7 @@ export class InputLongUrlComponent {
         (err) => {
           console.log(err);
           this.loading = false;
-          this.dialog.open(DialogShortUrl, {
+          this.dialog.open(DialogShortUrlComponent, {
             data: {
               title: 'Error Occurred',
               content: err.message
@@ -75,10 +80,10 @@ export class InputLongUrlComponent {
 }
 
 @Component({
-  selector: 'dialog-short-url',
+  selector: 'app-dialog-short-url',
   templateUrl: 'dialog-short-url.html',
 })
-export class DialogShortUrl {
+export class DialogShortUrlComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 
   content: string = this.data.content

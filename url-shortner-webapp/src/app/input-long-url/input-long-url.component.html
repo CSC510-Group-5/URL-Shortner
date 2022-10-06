@@ -16,16 +16,10 @@
       Please enter a valid URL.
     </mat-error>
   </mat-form-field>
-  <!-- <mat-form-field appearance="fill" class="full-width">
-    <mat-label>Choose an expiration date</mat-label>
-    <input matInput [matDatepicker]="picker" formControlName="expiration_date">
-    <mat-hint>MM/DD/YYYY</mat-hint>
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-    <mat-error *ngIf="urlShortnerForm?.get('expiration_date')?.errors?.['required']">
-      Expiration Date is required.
-    </mat-error>
-  </mat-form-field> -->
 <button mat-raised-button color="primary" type="submit">Get short URL</button>
 </form>
+
+<br><br><br><br>
+<button mat-raised-button color="primary" (click)="goToPage('update')">Update Existing URL</button><br><br>
+<button mat-raised-button color="primary" (click)="goToPage('delete')">Delete Existing URL</button>
 </div>

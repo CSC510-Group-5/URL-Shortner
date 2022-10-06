@@ -1,0 +1,19 @@
+<div class="wrapper">
+    <h3>Delete URL</h3>
+    <div class="overlay" *ngIf="loading === true">
+      <div class="center">
+    <mat-spinner diameter=50 ></mat-spinner>
+    </div>
+    </div>
+    <form [formGroup]="urlShortnerForm" (ngSubmit)="deleteShortURL()" novalidate>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Enter Access Code</mat-label>
+        <input type="text" matInput placeholder="Please enter the access code" formControlName="special_code">
+        <mat-error *ngIf="urlShortnerForm?.get('special_code')?.errors?.['required']">
+          Access Code is required.
+        </mat-error>
+      </mat-form-field>
+      <br>
+    <button mat-raised-button color="primary" type="submit">Delete URL</button>
+    </form>
+    </div>
