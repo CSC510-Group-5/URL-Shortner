@@ -10,3 +10,4 @@
 [![DOI](https://zenodo.org/badge/537949437.svg)](https://zenodo.org/badge/latestdoi/537949437)
 
 [![GitHub license](https://img.shields.io/github/license/CSC510-Group-5/URL-Shortner)](https://github.com/CSC510-Group-5/URL-Shortner/blob/main/LICENSE)
+[![codecov](https://codecov.io/gh/CSC510-Group-5/URL-Shortner/branch/main/graph/badge.svg?token=RPORD3384B)](https://codecov.io/gh/CSC510-Group-5/URL-Shortner)
