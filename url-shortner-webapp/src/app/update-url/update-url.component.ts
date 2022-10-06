@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { ApiService } from '../api.service';
-import { DialogShortUrl } from '../input-long-url/input-long-url.component';
+import { DialogShortUrlComponent } from '../input-long-url/input-long-url.component';
 import { UpdateURL } from '../models/UpdateURL';
 
 @Component({
@@ -12,7 +12,7 @@ import { UpdateURL } from '../models/UpdateURL';
   templateUrl: './update-url.component.html',
   styleUrls: ['./update-url.component.scss']
 })
-export class UpdateUrlComponent implements OnInit {
+export class UpdateUrlComponent{
 
   urlShortnerForm : FormGroup;
   urlRegex = new RegExp('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?');
@@ -42,7 +42,7 @@ export class UpdateUrlComponent implements OnInit {
       (data) => {
         this.loading = false;
 
-        const dialogRef = this.dialog.open(DialogShortUrl, {
+        const dialogRef = this.dialog.open(DialogShortUrlComponent, {
           data: {
             title: 'URL updated successfully',
             content: '<b>Short URL is: </b>' + environment.apiBaseUrl + "/stub/" + this.urlShortnerForm.get('stub')?.value + "<br> <b>Access code is: </b>" + this.urlShortnerForm.get('special_code')?.value + "<br> <b>New Long URL is: </b>" + data + "<br><br> Save this before closing the dialog. You can utilize the access code to update or delete your urls."
@@ -56,7 +56,7 @@ export class UpdateUrlComponent implements OnInit {
       (err) => {
         console.log(err);
         this.loading = false;
-        this.dialog.open(DialogShortUrl, {
+        this.dialog.open(DialogShortUrlComponent, {
           data: {
             title: 'Error Occurred',
             content: err.message
@@ -67,8 +67,5 @@ export class UpdateUrlComponent implements OnInit {
     console.log(this.urlShortnerForm.value);
   }
 }
-
-  ngOnInit(): void {
-  }
 
 }

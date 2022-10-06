@@ -50,7 +50,7 @@ export class InputLongUrlComponent {
           console.log(data);
           this.loading = false;
 
-          const dialogRef = this.dialog.open(DialogShortUrl, {
+          const dialogRef = this.dialog.open(DialogShortUrlComponent, {
             data: {
               title: 'Short URL Generated',
               content: '<b>Short URL is: </b>' + environment.apiBaseUrl + "/stub/" + data.stub + "<br> <b>Access code is: </b>" + data.special_code + "<br> Save this before closing the dialog. You can utilize the access code to update or delete your urls."
@@ -64,7 +64,7 @@ export class InputLongUrlComponent {
         (err) => {
           console.log(err);
           this.loading = false;
-          this.dialog.open(DialogShortUrl, {
+          this.dialog.open(DialogShortUrlComponent, {
             data: {
               title: 'Error Occurred',
               content: err.message
@@ -80,10 +80,10 @@ export class InputLongUrlComponent {
 }
 
 @Component({
-  selector: 'dialog-short-url',
+  selector: 'app-dialog-short-url',
   templateUrl: 'dialog-short-url.html',
 })
-export class DialogShortUrl {
+export class DialogShortUrlComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 
   content: string = this.data.content

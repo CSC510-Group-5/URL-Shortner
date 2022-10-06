@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
-import { DialogShortUrl } from '../input-long-url/input-long-url.component';
+import { DialogShortUrlComponent } from '../input-long-url/input-long-url.component';
 import { URL } from '../models/URL';
 
 @Component({
@@ -11,7 +11,7 @@ import { URL } from '../models/URL';
   templateUrl: './delete-url.component.html',
   styleUrls: ['./delete-url.component.scss']
 })
-export class DeleteUrlComponent implements OnInit {
+export class DeleteUrlComponent {
 
   urlShortnerForm : FormGroup;
   loading: boolean = false;
@@ -36,7 +36,7 @@ export class DeleteUrlComponent implements OnInit {
       (data) => {
         this.loading = false;
 
-        const dialogRef = this.dialog.open(DialogShortUrl, {
+        const dialogRef = this.dialog.open(DialogShortUrlComponent, {
           data: {
             title: 'Success',
             content: 'The URL has been deleted successfully.'
@@ -50,7 +50,7 @@ export class DeleteUrlComponent implements OnInit {
       (err) => {
         console.log(err);
         this.loading = false;
-        this.dialog.open(DialogShortUrl, {
+        this.dialog.open(DialogShortUrlComponent, {
           data: {
             title: 'Error Occurred',
             content: err.message
@@ -61,8 +61,5 @@ export class DeleteUrlComponent implements OnInit {
     console.log(this.urlShortnerForm.value);
   }
 }
-
-  ngOnInit(): void {
-  }
 
 }

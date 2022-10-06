@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InputLongUrlComponent, DialogShortUrl } from './input-long-url/input-long-url.component';
+import { InputLongUrlComponent, DialogShortUrlComponent } from './input-long-url/input-long-url.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -21,7 +21,7 @@ import { DeleteUrlComponent } from './delete-url/delete-url.component';
   declarations: [
     AppComponent,
     InputLongUrlComponent,
-    DialogShortUrl,
+    DialogShortUrlComponent,
     UpdateUrlComponent,
     DeleteUrlComponent
   ],
