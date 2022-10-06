@@ -51,7 +51,7 @@ jobs:
         uses: codecov/codecov-action@v2
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
-  Unit-Tests:
+  Lint-Check:
     runs-on: ubuntu-latest
     steps:
       - run: echo "The job was triggered on branch ${{ github.ref }}."
