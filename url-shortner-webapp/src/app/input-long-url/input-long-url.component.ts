@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { ApiService } from '../api.service';
 import { URL } from '../models/URL'
@@ -23,11 +24,15 @@ export class InputLongUrlComponent {
   urlRegex = new RegExp('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?');
   loading: boolean = false;
   
-  constructor(private fb: FormBuilder, private _apiService: ApiService, public dialog: MatDialog) {
+  constructor(private fb: FormBuilder, private _apiService: ApiService, public dialog: MatDialog, private router: Router) {
     // initialize the form and setup validators for form fields
     this.urlShortnerForm = this.fb.group({
     long_url: ['', [Validators.required, Validators.pattern(this.urlRegex) ]]
  });}
+
+  goToPage(page: string){
+    this.router.navigate([`${page}`]);
+  }
 
  // submit function to call actual API and get short URL
   getShortURL(){

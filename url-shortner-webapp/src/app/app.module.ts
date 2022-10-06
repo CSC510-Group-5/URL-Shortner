@@ -13,13 +13,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { UpdateUrlComponent } from './update-url/update-url.component';
+import { DeleteUrlComponent } from './delete-url/delete-url.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     InputLongUrlComponent,
-    DialogShortUrl
+    DialogShortUrl,
+    UpdateUrlComponent,
+    DeleteUrlComponent
   ],
   imports: [
     BrowserModule,
