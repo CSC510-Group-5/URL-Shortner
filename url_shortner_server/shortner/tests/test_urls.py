@@ -2,8 +2,8 @@ from django.test import SimpleTestCase
 from django.urls import reverse, resolve
 from shortner.views import DeleteView, NewView, UpdateView, StubView
 
+
 class TestUrls(SimpleTestCase):
-    
     def test_add_url_is_resolved(self):
         url = reverse('add_new')
         self.assertEquals(resolve(url).func.view_class, NewView)

@@ -8,16 +8,23 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Link',
+            name="Link",
             fields=[
-                ('long_url', models.CharField(max_length=2083)),
-                ('special_code', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('stub', models.CharField(max_length=10, unique=True)),
+                ("long_url", models.CharField(max_length=2083)),
+                (
+                    "special_code",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                ("stub", models.CharField(max_length=10, unique=True)),
             ],
         ),
     ]

@@ -51,3 +51,21 @@ jobs:
         uses: codecov/codecov-action@v2
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  Unit-Tests:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "The job was triggered on branch ${{ github.ref }}."
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install -r url_shortner_server/requirements.txt
+      - name: Lint with flake8
+        run: flake8
