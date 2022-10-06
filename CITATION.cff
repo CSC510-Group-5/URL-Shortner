@@ -1,0 +1,18 @@
+cff-version: 1.0.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Rohit"
+  given-names: "Nair"
+- family-names: "Deep"
+  given-names: "Mehta"
+- family-names: "Aditya"
+  given-names: "Khadse"
+- family-names: "Anmol"
+  given-names: "Lunavat"
+- family-names: "Pritesh"
+  given-names: "Surana"
+title: "URL-Shortner"
+version: 1.0.0
+doi: 10.5281/zenodo.7145409
+date-released: 2022-10-04
+url: "https://github.com/CSC510-Group-5/URL-Shortner"
