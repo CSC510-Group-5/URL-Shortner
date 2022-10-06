@@ -1,6 +1,5 @@
 """delete_view module defines the view that user wants to delete"""
 
-from cmath import e
 from django.http.request import HttpRequest
 from django.http.response import HttpResponse
 from django.views.generic import View
@@ -8,7 +7,7 @@ from shortner.models import Link
 import json
 
 class DeleteView(View):
-    """NewView is responsible for creation of new shortened links"""
+    """DeleteView is responsible for deletion of the shortened links"""
 
     def delete(self, request: HttpRequest):
         """delete handles requests to be deleted /delete"""
