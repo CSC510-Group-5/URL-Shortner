@@ -43,7 +43,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install coverage
+          python -m pip install -r url_shortner_server/requirements.txt
       - name: Run code coverage
         run: coverage run url_shortner_server/manage.py test shortner
 
