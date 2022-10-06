@@ -20,9 +20,9 @@ from django.urls import path
 from shortner.views import NewView, StubView, UpdateView, DeleteView
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("new/", NewView.as_view()),
-    path("delete/", DeleteView.as_view()),
-    path("stub/<slug:stub>/", StubView.as_view()),
-    path("update/", UpdateView.as_view()),
+    path("admin/", admin.site.urls, name='admin'),
+    path("new/", NewView.as_view(), name='add_new'),
+    path("delete/", DeleteView.as_view(), name='delete'),
+    path("stub/<slug:stub>/", StubView.as_view(), name='stub'),
+    path("update/", UpdateView.as_view(), name='update'),
 ]
