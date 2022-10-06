@@ -15,6 +15,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { UpdateUrlComponent } from './update-url/update-url.component';
 import { DeleteUrlComponent } from './delete-url/delete-url.component';
+import { NoPageComponentComponent } from './no-page-component/no-page-component.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { DeleteUrlComponent } from './delete-url/delete-url.component';
     InputLongUrlComponent,
     DialogShortUrlComponent,
     UpdateUrlComponent,
-    DeleteUrlComponent
+    DeleteUrlComponent,
+    NoPageComponentComponent
   ],
   imports: [
     BrowserModule,
