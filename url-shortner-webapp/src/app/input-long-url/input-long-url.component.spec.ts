@@ -1,4 +1,8 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormBuilder } from '@angular/forms';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { ApiService } from '../api.service';
 
 import { InputLongUrlComponent } from './input-long-url.component';
 
@@ -8,7 +12,9 @@ describe('InputLongUrlComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InputLongUrlComponent ]
+      declarations: [ InputLongUrlComponent ],
+      imports: [HttpClientModule, MatDialogModule],
+      providers:[ApiService, FormBuilder, MatDialog]
     })
     .compileComponents();
 
