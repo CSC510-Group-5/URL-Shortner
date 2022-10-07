@@ -43,7 +43,7 @@ jobs:
         run: npm install --prefix ./url-shortner-webapp
 
       - name: Run Ng Test
-        run: npm run ng test
+        run: npm run ng test --watch=false --browsers=ChromeHeadless
         working-directory: url-shortner-webapp
         continue-on-error: false
   Code-Coverage:
