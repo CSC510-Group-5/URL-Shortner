@@ -8,8 +8,8 @@
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/CSC510-Group-5/URL-Shortner)](https://github.com/CSC510-Group-5/URL-Shortner/graphs/commit-activity)
 [![DOI](https://zenodo.org/badge/537949437.svg)](https://zenodo.org/badge/latestdoi/537949437)
 [![GitHub license](https://img.shields.io/github/license/CSC510-Group-5/URL-Shortner)](https://github.com/CSC510-Group-5/URL-Shortner/blob/main/LICENSE)
-
 [![GitHub issues](https://img.shields.io/github/issues/CSC510-Group-5/URL-Shortner)](https://github.com/CSC510-Group-5/URL-Shortner/issues)
+[![codecov](https://codecov.io/gh/CSC510-Group-5/URL-Shortner/branch/main/graph/badge.svg?token=RPORD3384B)](https://codecov.io/gh/CSC510-Group-5/URL-Shortner)
 
 Wondering why the Shortner is misspelled? Thats because this project is all about making it short, simple and easy to share.
 URL-Shortner aims to be the easiest ad-free url shortener that can be used to quickly generate sharable short urls.

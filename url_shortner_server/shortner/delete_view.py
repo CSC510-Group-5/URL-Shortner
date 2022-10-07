@@ -6,6 +6,7 @@ from django.views.generic import View
 from shortner.models import Link
 import json
 
+
 class DeleteView(View):
     """DeleteView is responsible for deletion of the shortened links"""
 
@@ -18,5 +19,5 @@ class DeleteView(View):
             member.delete()
             return HttpResponse(status=204)
         except Exception as e:
-            error_msg = {"exception":str(e)}
+            error_msg = {"exception": str(e)}
             return HttpResponse(json.dumps(error_msg), status=404)
