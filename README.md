@@ -56,7 +56,7 @@ You should see a popup mentioning the short version of URL and an **access code*
 
 Click on Update Existing URL button. This will take you to the update url page.
 
-![URL-Update](docs/images/URL_Delete.png)
+![URL-Update](docs/images/URL_Update.png)
 
 Enter the following details:
 
