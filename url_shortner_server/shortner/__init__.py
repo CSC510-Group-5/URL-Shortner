@@ -1,8 +1,9 @@
-import os
-
 """
+.. include:: ../../README.md
 .. include:: ../README.md
 """
+
+import os
 
 if not os.environ.get('DJANGO_SETTINGS_MODULE'):
     import django
