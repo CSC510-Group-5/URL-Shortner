@@ -30,6 +30,7 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
   Angular-Unit-Tests:
     runs-on: ubuntu-latest
+    working-directory: url-shortner-webapp
     steps:
       - run: echo "The job was triggered on branch ${{ github.ref }}."
 
@@ -43,7 +44,7 @@ jobs:
         run: npm install --prefix ./url-shortner-webapp
 
       - name: Run Ng Test
-        run: npm run test
+        run: npx run test
         continue-on-error: false
   Code-Coverage:
     runs-on: ubuntu-latest
