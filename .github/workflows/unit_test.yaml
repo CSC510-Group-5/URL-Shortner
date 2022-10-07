@@ -2,8 +2,7 @@ name: Test & Coverage
 on:
   push:
     branches:
-      -[ "**" ]
-      # -"users/anmol"
+      - "users/anmol"
   pull_request:
     branches:
       - "main"
