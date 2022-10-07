@@ -28,7 +28,7 @@ GitHub URL: [https://github.com/CSC510-Group-5/URL-Shortner](https://github.com/
 |The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up|3|[CONTRIBUTING.md](https://github.com/CSC510-Group-5/URL-Shortner/blob/main/CONTRIBUTING.md)|
 |Issues are discussed before they are closed|3|[Issue for example](https://github.com/CSC510-Group-5/URL-Shortner/issues/54)|
 |Chat channel: exists|3|[GitHub Discussions](https://github.com/CSC510-Group-5/URL-Shortner/discussions)|
-|Test cases: a large proportion of the issues related to handling failing cases|||
+|Test cases: a large proportion of the issues related to handling failing cases|3|[Link to issue](https://github.com/CSC510-Group-5/URL-Shortner/issues/89)|
 |Evidence that the whole team is using the same tools: everyone can get to all tools and files|||
 |Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)|||
 |Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer)|||
@@ -79,7 +79,7 @@ GitHub URL: [https://github.com/CSC510-Group-5/URL-Shortner](https://github.com/
 |Do you provide publicly-available instructions for deploying your software?|||
 |Does your documentation list all third-party dependencies?|3|[API requirements](https://github.com/CSC510-Group-5/URL-Shortner/blob/main/url_shortner_server/requirements.txt), [Webapp Dependencies](https://victorious-sky-08a81ed0f.2.azurestaticapps.net/dependencies.html)|
 |Does your documentation list the version number for all third-party dependencies?|3|[API requirements](https://github.com/CSC510-Group-5/URL-Shortner/blob/main/url_shortner_server/requirements.txt), [Webapp Dependencies](https://victorious-sky-08a81ed0f.2.azurestaticapps.net/dependencies.html)|
-|Does your software list the web address, and licences for all third-party dependencies and say whether the dependencies are mandatory or optional?|||
+|Does your software list the web address, and licences for all third-party dependencies and say whether the dependencies are mandatory or optional?|0|The dependencies do not have licences mentioned besides them|
 |Can you download dependencies using a dependency management tool or package manager? e.g. Ivy (http://ant.apache.org/ivy/), Maven (https://maven.apache.org/), Python pip (https://pypi.python.org/pypi/pip) or setuptools (https://pypi.python.org/pypi/setuptools), PHP Composer (https://getcomposer.org/), Ruby gems (https://rubygems.org), or R PackRat (https://rstudio.github.io/packrat/)|3|[API requirements can be downloaded via pip](https://github.com/CSC510-Group-5/URL-Shortner/blob/main/url_shortner_server/requirements.txt), [Webapp dependencies can be downloaded via npm](https://victorious-sky-08a81ed0f.2.azurestaticapps.net/dependencies.html)|
 |Do you have tests that can be run after your software has been built or deployed to show whether the build or deployment has been successful?|0|No such tests have been added|
 |Do you have an automated test suite for your software?|3|[Link to automated test suite](https://github.com/CSC510-Group-5/URL-Shortner/blob/main/.github/workflows/unit_test.yaml)|
