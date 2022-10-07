@@ -68,7 +68,7 @@ GitHub URL: [https://github.com/CSC510-Group-5/URL-Shortner](https://github.com/
 |Does your software allow communications using open communications protocols? e.g. HTTP, FTP, XMPP, SOAP over HTTP,  or domain-specific ones|3|[HTTP is used for communication](https://yoururl.tech/url-shortner)|
 |Is your software cross-platform compatible? e.g. does it run under two or more of Windows, Unix/Linux and Mac OS X, or can be used from within two or more of Internet Explorer, Chrome, Firefox and Safari?|3|[Link to website](https://yoururl.tech/url-shortner)|
 |Does your software adhere to appropriate accessibility conventions or standards?|3|[Angular Material ensures accessibility standards are followed]()|
-|Does your documentation adhere to appropriate accessibility conventions or standards?||[pdoc and compodoc ensure that accessibility standards are followed]()|
+|Does your documentation adhere to appropriate accessibility conventions or standards?|3|[pdoc and compodoc ensure that accessibility standards are followed]()|
 |Is your source code stored in a repository under revision control?|3|[Repository on GitHub](https://github.com/CSC510-Group-5/URL-Shortner)|
 |Is each source code release a snapshot of the repository?|3|[Link to Releases](https://github.com/CSC510-Group-5/URL-Shortner/releases)|
 |Are releases tagged in the repository?|3|[Releases also have tags on GitHub](https://github.com/CSC510-Group-5/URL-Shortner/releases)|
