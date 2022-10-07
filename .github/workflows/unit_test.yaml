@@ -43,7 +43,7 @@ jobs:
         run: npm install --prefix ./url-shortner-webapp
 
       - name: Run Ng Test
-        run: npx run test
+        run: npm run ng test
         working-directory: url-shortner-webapp
         continue-on-error: false
   Code-Coverage:
