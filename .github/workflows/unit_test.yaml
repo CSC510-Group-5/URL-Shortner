@@ -1,12 +1,11 @@
 name: Test & Coverage
 on:
-  push:
-    branches:
-      - "main"
   pull_request:
     branches:
       - "main"
   workflow_dispatch:
+  schedule:
+    - cron: '44 1 * * 4'
 jobs:
   Unit-Tests:
     runs-on: ubuntu-latest
