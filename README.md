@@ -43,12 +43,12 @@ URL-Shortner has APIs developed using python and front-end web application devel
 
 Go to [yoururl.tech/url-shortner](https://yoururl.tech/url-shortner)
 
-![URL-Shortner-HomePage](docs/images/URL_Shortner_Home.png)
+![URL-Shortner-HomePage](https://lmsstorageservice.blob.core.windows.net/images/URL_Shortner_Home.png)
 
 Enter the long version of the URL you want to generate a short version and click **Get short URL**.
 You should see a popup mentioning the short version of URL and an **access code**. This code can be utilized to update or delete an existing URL.
 
-![URL-Generated-Popup](docs/images/URL_Generated_Popup.png)
+![URL-Generated-Popup](https://lmsstorageservice.blob.core.windows.net/images/URL_Generated_Popup.png)
 
 > Save the access code, since you won't be able to access it later.
 
@@ -56,7 +56,7 @@ You should see a popup mentioning the short version of URL and an **access code*
 
 Click on Update Existing URL button. This will take you to the update url page.
 
-![URL-Update](docs/images/URL_Update.png)
+![URL-Update](https://lmsstorageservice.blob.core.windows.net/images/URL_Update.png)
 
 Enter the following details:
 
@@ -72,7 +72,7 @@ Click on Update URL and if all fields are correct and validated, the URL should 
 
 If you no longer need a URL, click on Delete Existing URL button on the home page.
 
-![URL-Delete](docs/images/URL_Delete.png)
+![URL-Delete](https://lmsstorageservice.blob.core.windows.net/images/URL_Delete.png)
 
 Enter the access code that was provided to you at the time of creating new short URL. Click on Delete URL, and if the access code is correct, it will successfully delete the URL.
 
