@@ -35,6 +35,8 @@ URL-Shortner aims to be the easiest ad-free url shortener that can be used to qu
 If you answered yes to any of the above questions, then this is going to bring a smile to your face!
 The URL-Shortner is a simple tool that you can utilize to create short versions of that long urls and share it with others. Additionally, its just a few clicks to update an existing URL if you made a mistake or the URL has changes over time. If you don't need it anymore, simply go ahead and delete that.
 
+![URL-Shortner Intro Video](https://lmsstorageservice.blob.core.windows.net/images/URL_Shortner_Intro.gif)
+
 URL-Shortner has APIs developed using python and front-end web application developed using angular.
 
 ## How to use?
