@@ -69,6 +69,29 @@ jobs:
         uses: codecov/codecov-action@v2
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  Angular-Code-Coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "The job was triggered on branch ${{ github.ref }}."
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+
+      - name: Install dependencies
+        run: npm install --prefix ./url-shortner-webapp
+
+      - name: Code Coverage
+        run: npm test -- --coverage --watch=false --browsers=ChromeHeadless
+        working-directory: url-shortner-webapp
+        continue-on-error: false
+
+      - name: Upload Coverage to Codecov
+        uses: codecov/codecov-action@v2
+
+      - run: echo "🍏 This job's status is ${{ job.status }}."
   Lint-Check:
     runs-on: ubuntu-latest
     steps:
