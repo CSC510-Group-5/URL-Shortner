@@ -2,7 +2,7 @@ name: Build and Push WebApp
 
 on:
   push:
-    branches: [main]
+    branches: [mai]
   pull_request:
     branches: [main]
   workflow_dispatch:
