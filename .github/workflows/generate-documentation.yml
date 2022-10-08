@@ -7,9 +7,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  build_and_deploy_job:
+  build_and_deploy_api_job:
+    environment:
+      name: python-api-docs
+      url: ${{ steps.builddeploy.outputs.static_web_app_url }}
     runs-on: ubuntu-latest
-    name: Build and Deploy Job
+    name: Deploy API Docs
     steps:
       - uses: actions/checkout@v2
         with:
@@ -19,7 +22,9 @@ jobs:
         with:
           python-version: "3.x"
       - name: Install pdoc3
-        run: pip3 install pdoc3
+        run: |
+          pip3 install pdoc3
+          pip install -r url_shortner_server/requirements.txt
       - name: Generate Documentation
         run: pdoc --html url_shortner_server/shortner
       - name: Build And Deploy API Documentation
@@ -35,6 +40,17 @@ jobs:
           api_location: "api" # Api source code path - optional
           output_location: "public" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+
+  build_and_deploy_angular_job:
+    environment:
+      name: angular-app-docs
+      url: ${{ steps.builddeployangular.outputs.static_web_app_url }}
+    runs-on: ubuntu-latest
+    name: Deploy App Docs
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
       - name: Install compodoc
         run: npm install @compodoc/compodoc
       - name: Generate Documentation
@@ -42,7 +58,7 @@ jobs:
           cd url-shortner-webapp
           npm run generate-docs
       - name: Build And Deploy APP Documentation
-        id: builddeploy
+        id: builddeployangular
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_APP_TOKEN }}

@@ -1,27 +1,36 @@
-# UrlShortner
+# Url-Shortner WebApp 🌐
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+[![Documentation Badge](https://img.shields.io/badge/APP_Documentation-compodoc-blue.svg)](https://victorious-sky-08a81ed0f.2.azurestaticapps.net/)
+[![Build and Push WebApp](https://github.com/CSC510-Group-5/URL-Shortner/actions/workflows/build.yml/badge.svg)](https://github.com/CSC510-Group-5/URL-Shortner/actions/workflows/build.yml)
 
-## Development server
+The URL Shortner WebApp has been developed using Angular 14. This WebApp mainly contains 4 Components and 1 Service:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. **Input URL Component:** This is used to accept the long url and output the short version of URL and secret access code in the form of a dialog box.
+2. **Update URL Component:** This is used to update an existing url by taking the stub, access code and new long url as input.
+3. **Delete URL Component:** This is used to delete an existing url using the secret access code as input.
+4. **No Page URL Component:** This is used to show a 404 page when no matching url route exists.
+5. **API Service:** This service is responsible for connecting with the backend APIs and performing CRUD operations on the database.
 
-## Code scaffolding
+## Development
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To add new features or fix a bug in the app, you can perform the following steps:
 
-## Build
+1. Clone the repository
+2. Install npm from [here](https://docs.npmjs.com/cli/v6/commands/npm-install)
+3. Open terminal/cmd in url-shortner-webapp folder
+4. Run npm install -g @angular/cli to install angular cli
+5. Run npm install
+6. These commands should install the required modules and allow you to run the application.
+7. To verify if the setup works, run ng serve and see if you can see the application running on localhost.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Deployment
 
-## Running unit tests
+We currently have continuous deployment setup for the web application. As part of continuos deployment we build & push the app as a docker image to [GitHub Packages](https://github.com/CSC510-Group-5/URL-Shortner/pkgs/container/url-shortner).
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+This package can then be deployed to any suitable cloud or on-prem service and the application should work as expected. Currently this docker image is pulled by Azure App Service, which then runs the application as a container.
 
-## Running end-to-end tests
+## Troubleshooting
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+You might come across errors or issues while setting up, development or deployment. Below are some of the common errors and issues that users face and solutions to resolve them:
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. If you see the following error: `Error: This command is not available when running the Angular CLI outside a workspace.`. This occurs when you try to run ng cli commands outside of the `url-shortner-webapp` folder where currently the angular app source code resides. To resolved this, change directory to `url-shortner-webapp` and re-run the command.

@@ -9,8 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "compodoc": "compodoc",
-    "generate-docs": "compodoc -p tsconfig.app.json",
-    "serve-docs": "compodoc -s tsconfig.app.json"
+    "generate-docs": "compodoc -p tsconfig.app.json --includes '.'",
+    "serve-docs": "compodoc -s tsconfig.app.json --includes '.'"
   },
   "private": true,
   "dependencies": {
