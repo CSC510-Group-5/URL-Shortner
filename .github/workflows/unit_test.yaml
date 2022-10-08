@@ -84,7 +84,7 @@ jobs:
         run: npm install --prefix ./url-shortner-webapp
 
       - name: Code Coverage
-        run: npm test -- --coverage --watch=false --browsers=ChromeHeadless
+        run: npm test -- --code-coverage --watch=false --browsers=ChromeHeadless
         working-directory: url-shortner-webapp
         continue-on-error: false
 
