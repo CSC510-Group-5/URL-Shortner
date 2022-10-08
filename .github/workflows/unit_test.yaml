@@ -2,7 +2,7 @@ name: Test & Coverage
 on:
   push:
     branches:
-      - "users/anmol"
+      - "main"
   pull_request:
     branches:
       - "main"
