@@ -2,7 +2,7 @@
 
 GitHub URL: [https://github.com/CSC510-Group-5/URL-Shortner](https://github.com/CSC510-Group-5/URL-Shortner)
 
-|Notes|Assessment (Sum = )|Evidence|
+|Notes|Assessment (Sum = 269/294)|Evidence|
 |-----|----------|--------|
 |Video1|#|Not Applicable|
 |Video2|#|Not Applicable|
