@@ -57,7 +57,7 @@ class TestViews(TestCase):
             },
             content_type="application/json",
         )
-        self.assertEquals(update_response.status_code, 404)
+        self.assertEquals(update_response.status_code, 302)
 
         self.stub_url = reverse("stub", args=[stub])
         http_response = self.client.get(self.stub_url)
@@ -81,4 +81,4 @@ class TestViews(TestCase):
 
         self.stub_url = reverse("stub", args=[stub])
         http_response = self.client.get(self.stub_url)
-        self.assertEquals(http_response.status_code, 404)
+        self.assertEquals(http_response.status_code, 302)
