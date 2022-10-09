@@ -14,7 +14,8 @@ class Link(models.Model):
 
     # 2083 is the max length of URL supported by Microsoft Edge
     long_url = models.CharField(max_length=2083)
-    special_code = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    special_code = models.UUIDField(
+        primary_key=True, default=uuid4, editable=False)
     stub = models.CharField(max_length=STUB_LENGTH, unique=True)
 
     def save(self, *args, **kwargs):

@@ -38,7 +38,11 @@ class TestViews(TestCase):
         new_long_url = "https://facebook.com/"
         update_response = self.client.put(
             self.update_url,
-            {"new_long_url": new_long_url, "special_code": special_code, "stub": stub},
+            {
+                "new_long_url": new_long_url,
+                "special_code": special_code,
+                "stub": stub
+                },
             content_type="application/json",
         )
         self.assertEquals(update_response.status_code, 201)
