@@ -1,8 +1,9 @@
 """stub_view module has views for stub"""
 
-from django.http.response import HttpResponse, HttpResponseRedirect
+from django.http.response import HttpResponseRedirect
 from django.views.generic import View
 
+from shortner.constants import REDIRECT_404_URL
 from shortner.models import Link
 
 
@@ -15,4 +16,4 @@ class StubView(View):
             link = Link.objects.get(stub=stub)  # pylint: disable=no-member
             return HttpResponseRedirect(link.long_url)
         except Link.DoesNotExist:  # pylint: disable=no-member
-            return HttpResponse(status=404)
+            return HttpResponseRedirect(REDIRECT_404_URL)
