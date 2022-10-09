@@ -29,6 +29,24 @@ jobs:
         run: python url_shortner_server/manage.py test shortner
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  Angular-Unit-Tests:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "The job was triggered on branch ${{ github.ref }}."
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+
+      - name: Install dependencies
+        run: npm install --prefix ./url-shortner-webapp
+
+      - name: Run Ng Test
+        run: npm run ng test -- --watch=false --browsers=ChromeHeadless
+        working-directory: url-shortner-webapp
+        continue-on-error: false
   Code-Coverage:
     runs-on: ubuntu-latest
     steps:
@@ -49,6 +67,29 @@ jobs:
         run: |
           coverage run url_shortner_server/manage.py test shortner
           coverage report --omit=url_shortner_server/shortner/__init__.py
+
+      - name: Upload Coverage to Codecov
+        uses: codecov/codecov-action@v2
+
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+  Angular-Code-Coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "The job was triggered on branch ${{ github.ref }}."
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+
+      - name: Install dependencies
+        run: npm install --prefix ./url-shortner-webapp
+
+      - name: Code Coverage
+        run: npm test -- --code-coverage --watch=false --browsers=ChromeHeadless
+        working-directory: url-shortner-webapp
+        continue-on-error: false
 
       - name: Upload Coverage to Codecov
         uses: codecov/codecov-action@v2

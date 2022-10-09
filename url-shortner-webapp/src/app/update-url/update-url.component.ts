@@ -17,6 +17,7 @@ export class UpdateUrlComponent{
   urlShortnerForm : FormGroup;
   urlRegex = new RegExp('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?');
   loading: boolean = false;
+  updatedURLData : Object = {};
   
   constructor(private fb: FormBuilder, private _apiService: ApiService, public dialog: MatDialog, private router: Router) {
     // initialize the form and setup validators for form fields
@@ -41,7 +42,7 @@ export class UpdateUrlComponent{
     this._apiService.updateURL(newURL).subscribe(
       (data) => {
         this.loading = false;
-
+        this.updatedURLData = data;
         const dialogRef = this.dialog.open(DialogShortUrlComponent, {
           data: {
             title: 'URL updated successfully',

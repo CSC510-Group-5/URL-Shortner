@@ -23,6 +23,7 @@ export class InputLongUrlComponent {
   urlShortnerForm : FormGroup;
   urlRegex = new RegExp('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?');
   loading: boolean = false;
+  shortURLData : Object = {};
   
   constructor(private fb: FormBuilder, private _apiService: ApiService, public dialog: MatDialog, private router: Router) {
     // initialize the form and setup validators for form fields
@@ -47,7 +48,7 @@ export class InputLongUrlComponent {
 
       this._apiService.addURL(newURL).subscribe(
         (data) => {
-          console.log(data);
+          this.shortURLData = data;
           this.loading = false;
 
           const dialogRef = this.dialog.open(DialogShortUrlComponent, {
