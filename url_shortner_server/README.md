@@ -38,3 +38,8 @@ Some common HTTP status codes that can be seen in the logs provided by the Djang
 |`manage.py`|This file is used for running Django project commands. Full list can be seen [here](https://docs.djangoproject.com/en/3.2/ref/django-admin/#available-commands)|
 |`db.sqlite3`|This is the database of the project, ideally should not be committed to the repository (this repository does not contain this file). If the file is missing, the project generates it.|
 |`requirements.txt`|Contains the requirements for the project.|
+
+## Export
+
+Data for the project can be exported in JSON format using the following command:
+`python manage.py dumpdata > data.json`
