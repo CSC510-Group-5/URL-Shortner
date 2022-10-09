@@ -1,0 +1,3 @@
+ignore:
+    url_shortner_server/shortner/migrations/__init__.py
+  
