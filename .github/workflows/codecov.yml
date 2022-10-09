@@ -1,0 +1,2 @@
+ignore:
+  - "url_shortner_server/shortner/__init__.py"
