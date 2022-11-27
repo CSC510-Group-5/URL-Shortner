@@ -1,50 +1,155 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-</head>
-<body>
 
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Au Register Forms by Colorlib</title>
+
+    <!-- Icons font CSS-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <!-- <link href="css/main.css" rel="stylesheet" media="all"> -->
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+
+<body>
     {% for message in messages %}
     <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
         <strong>Message:</strong> {{ message }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
     {% endfor %}
 
-    <h3>Create your account!</h3>
-    <form method="post" action="/signup">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" name="username" placeholder="Create A Username (use only letters and numbers)" Required>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Registration Form</h2>
+
+                    <!--   # ======================================== FORM ========================================     -->
+                    <form method="POST" action="/signup">
+                        {% csrf_token %}
+                        <div class="row row-space">
+                            <div class="col-3">
+                                <div class="input-group form-group">
+                                    <label for="username" class="label">Username</label>
+                                    <input type="text" class="form-control input--style-4" id="username" name="username" placeholder="Create A Username (use only letters and numbers)" Required>
+                                </div>
+                            </div>
+
+                            <!-- 
+
+                            <div class="form-group">
+                                <label for="pass1">Password</label>
+                                <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Create Your Password" Required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass2">Confirm Password</label>
+                                <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Confirm Your Password" Required>
+                            </div> 
+                        -->
+
+    
+
+
+                            <div class="col-3">
+                                <div class="form-group input-group">
+                                    <label for="fname">First Name</label>
+                                    <input type="text" class="form-control input--style-4" id="fname" name="fname" placeholder="Enter Your First Name" Required>
+                                </div>
+                            </div>
+
+                            <div class="col-3">
+                                <div class="form-group input-group">
+                                    <label for="lname">Last Name</label>
+                                    <input type="text" class="form-control input--style-4" id="lname" name="lname" placeholder="Enter Your Last Name" Required>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Birthday</label>
+                                    <div class="input-group-icon">
+                                        <input class="input--style-4 js-datepicker" type="text" name="birthday">
+                                        <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Gender</label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">Male
+                                            <input type="radio" checked="checked" name="gender">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">Female
+                                            <input type="radio" name="gender">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="row row-space">
+                            <div class="col-3">
+                                <div class="form-group input-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control input--style-4" id="email" name="email" placeholder="Enter Your Email Address" Required>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group input-group">
+                                    <label for="pass1">Password</label>
+                                    <input type="password" class="form-control input--style-4" id="pass1" name="pass1" placeholder="Create Your Password" Required>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group input-group">
+                                    <label for="pass2">Confirm Password</label>
+                                    <input type="password" class="form-control input--style-4" id="pass2" name="pass2" placeholder="Confirm Your Password" Required>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="p-t-15">
+                            <button type="submit" class="btn btn-primary">Sign Up</button>                            
+                        </div>
+                    </form>
+                    <!--   # ======================================================================================     -->
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="fname">First Name</label>
-            <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter Your First Name" Required>
-        </div>
-        <div class="form-group">
-            <label for="lname">Last Name</label>
-            <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Your Last Name" Required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email Address" Required>
-        </div>
-        <div class="form-group">
-            <label for="pass1">Password</label>
-            <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Create Your Password" Required>
-        </div>
-        <div class="form-group">
-            <label for="pass2">Confirm Password</label>
-            <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Confirm Your Password" Required>
-        </div>
-        <button type="submit" class="btn btn-primary">Sign Up</button>
-    </form>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="{% static 'global.js' %}"></script>
+
 </body>
+
 </html>
