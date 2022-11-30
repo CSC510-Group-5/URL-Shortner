@@ -1,0 +1,37 @@
+
+:root {
+  --font-default: 'EB Garamond', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-primary: 'EB Garamond', serif; /*'Playfair Display', serif;*/
+  --font-secondary: 'Inter', sans-serif;
+
+  --color-default: #212529;
+  --color-default-rgb: 33, 37, 41;
+
+  --color-links: #212529;
+  --color-links-hover: #15171a;
+
+  --color-primary: #212529;
+  --color-primary-light: #26282c;
+  --color-primary-dark: #0b0c0e;
+
+  --color-primary-rgb: 33, 37, 41;
+  --color-primary-light-rgb: 38, 40, 44;
+  --color-primary-dark-rgb: 11, 12, 14;
+
+  --color-blue: #0d6efd;
+  --color-blue-rgb: 13, 110, 253;
+
+  --color-white: #ffffff;
+  --color-white-rgb: 255, 255, 255;
+
+  --color-gray: #6c757d;
+  --color-gray-rgb: 108, 117, 125;
+
+  --color-black: #000000;
+  --color-black-rgb: 0, 0, 0;
+}
+
+
+
+
+

@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,25 +6,20 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <meta content="" name="description">
-  <meta content="" name="keywords">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link rel="stylesheet" href="{% static 'homemain.css' %}">
+  <link rel="stylesheet" href="{% static 'colors.css' %}">
+
 </head>
-
 <body>
-
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center">
-
-        <h1>Welcome, {{ fname }}!</h1>
-      </a>
-
+      <h1> Welcome,  {{userFname}}</h1>
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -33,11 +27,9 @@
           <li><a href="about.html">Statistics</a></li>
         </ul>
       </nav>
-
       <div class="position-relative">
         <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
         <i class="bi bi-list mobile-nav-toggle"></i>
-
         <div class="search-form-wrap js-search-form-wrap">
           <form action="search-result.html" class="search-form">
             <span class="icon bi-search"></span>
@@ -46,37 +38,29 @@
           </form>
         </div>
       </div>
-
     </div>
-
   </header>
   <main id="main">
     <section id="contact" class="contact mb-5">
       <div class="container" data-aos="fade-up">
         <div class="form mt-5">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <form action="new" method="post" role="form" class="php-email-form">
             <div class="form-group">
               <input type="text" class="form-control" name="long-url" id="long-url" placeholder="Long-Url" required>
             </div>
-            <div class="text-center"><button type="submit">Generate Url</button></div>
+            <div class="text-center"><button type="submit">Generate</button></div>
           </form>
         </div>
-
       </div>
     </section>
-
   </main>
 
-  <footer id="footer" class="footer">
-
-    <div class="footer-content">
+  <footer id="footer" class="site-footer footer">
+    <div class="site-footer footer-content">
       <div class="container">
-
         <div class="row g-5">
           <div class="col-lg-4">
-            <h3 class="footer-heading">Group 16 test</h3>
-            <p>We are group 16 and checkout what we have done to improve this! Thanks to group 5 for such amazing work!</p>
-            <p><a href="about.html" class="footer-link-more">Learn More</a></p>
+            <p>Made with <span style="color: #e25555;">&hearts;</span> by Team 5 and Team 16</p>
           </div>
         </div>
       </div>

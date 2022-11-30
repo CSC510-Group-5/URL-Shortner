@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "shortner",
     "corsheaders",
+    "bootstrap4",
 ]
 
 MIDDLEWARE = [
@@ -129,7 +130,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
-STATICFILES_DIRS = [ os.path.join(BASE_DIR,'static') ]
+STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'static'), os.path.join(BASE_DIR,'boot'))
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 # Default primary key field type

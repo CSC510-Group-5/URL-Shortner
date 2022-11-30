@@ -11,6 +11,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
+from shortner.models import Link
 __all__ = ["NewView", "StubView", "UpdateView", "DeleteView"]
 
 def home(request):
@@ -48,13 +49,26 @@ def signin(request):
         if user is not None:
             login(request,user)
             fname = user.first_name
-            return render(request, "homepages/index.html",{"fname":fname})
+            return redirect("homepage",fname=fname)
         else:
             messages.error(request,"Bad Credentials!")
             return redirect("home")
 
     # Render the main page if we try to access signin through the url (GET)
     return render(request, "authentication/index.html")
+
+
+def homepage(request, fname):
+    if(request.method == 'GET'):
+       messages.success(request, "Login Successfull!")
+       print("{} has logged in".format(fname))
+       args = {}
+       args['userFname'] = fname
+       return render(request, 'homepages/index.html', args)
+    # if(request.method == 'POST'): # TO handle new post - backup option
+    #     print("URL Generation requested!")
+
+
 
 def signout(request):
     logout(request)
